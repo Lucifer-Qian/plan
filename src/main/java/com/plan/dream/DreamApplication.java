@@ -12,7 +12,11 @@ import org.springframework.context.annotation.ComponentScan;
 public class DreamApplication {
 
     public synchronized static void main(String[] args) {
-        SpringApplication.run(DreamApplication.class, args);
+        try {
+            SpringApplication.run(DreamApplication.class, args);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

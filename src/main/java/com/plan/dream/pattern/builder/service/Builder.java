@@ -48,7 +48,7 @@ public abstract class Builder {
      * 生产电脑
      *
      * @param
-     * @return com.plan.dream.pattern.builder.service.entity.Computer
+     * @return com.plan.dream.pattern.builder.service.com.plan.dream.entity.Computer
      * @throws
      * @method createComputer
      * @author Rocky Qian

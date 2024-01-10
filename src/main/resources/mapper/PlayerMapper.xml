@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plan.dream.dao.PlayerDao">
+
+    <resultMap type="com.plan.dream.entity.Player" id="PlayerMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="age" column="age" jdbcType="INTEGER"/>
+        <result property="joinYear" column="join_year" jdbcType="VARCHAR"/>
+        <result property="weight" column="weight" jdbcType="INTEGER"/>
+        <result property="height" column="height" jdbcType="INTEGER"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="isDelete" column="is_delete" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="PlayerMap">
+        select
+        id, name, age, join_year, weight, height, create_time, update_time, is_delete
+        from player
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="PlayerMap">
+        select
+        id, name, age, join_year, weight, height, create_time, update_time, is_delete
+        from player
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="age != null">
+                and age = #{age}
+            </if>
+            <if test="joinYear != null and joinYear != ''">
+                and join_year = #{joinYear}
+            </if>
+            <if test="weight != null">
+                and weight = #{weight}
+            </if>
+            <if test="height != null">
+                and height = #{height}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="isDelete != null">
+                and is_delete = #{isDelete}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from player
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="age != null">
+                and age = #{age}
+            </if>
+            <if test="joinYear != null and joinYear != ''">
+                and join_year = #{joinYear}
+            </if>
+            <if test="weight != null">
+                and weight = #{weight}
+            </if>
+            <if test="height != null">
+                and height = #{height}
+            </if>
+            <if test="createTime != null">
+                and create_time = #{createTime}
+            </if>
+            <if test="updateTime != null">
+                and update_time = #{updateTime}
+            </if>
+            <if test="isDelete != null">
+                and is_delete = #{isDelete}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into player(name, age, join_year, weight, height, create_time, update_time, is_delete)
+        values (#{name}, #{age}, #{joinYear}, #{weight}, #{height}, #{createTime}, #{updateTime}, #{isDelete})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into player(name, age, join_year, weight, height, create_time, update_time, is_delete)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.name}, #{entity.age}, #{entity.joinYear}, #{entity.weight}, #{entity.height}, #{entity.createTime}, #{entity.updateTime}, #{entity.isDelete})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into player(name, age, join_year, weight, height, create_time, update_time, is_delete)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}, #{entity.age}, #{entity.joinYear}, #{entity.weight}, #{entity.height}, #{entity.createTime}, #{entity.updateTime}, #{entity.isDelete})
+        </foreach>
+        on duplicate key update
+            name = values(name),
+            age = values(age),
+            join_year = values(join_year),
+            weight = values(weight),
+            height = values(height),
+            create_time = values(create_time),
+            update_time = values(update_time),
+            is_delete = values(is_delete)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update player
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="age != null">
+                age = #{age},
+            </if>
+            <if test="joinYear != null and joinYear != ''">
+                join_year = #{joinYear},
+            </if>
+            <if test="weight != null">
+                weight = #{weight},
+            </if>
+            <if test="height != null">
+                height = #{height},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime},
+            </if>
+            <if test="isDelete != null">
+                is_delete = #{isDelete},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from player where id = #{id}
+    </delete>
+
+</mapper>
+

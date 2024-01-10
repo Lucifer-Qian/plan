@@ -20,21 +20,21 @@ import javax.sql.DataSource;
 
 /**
  * 事件驱动数据源配置
- * @author zhangHW
  *
+ * @author qmc
  */
 @Configuration
 //扫描 Mapper 接口并容器管理
-@MapperScan(basePackages = DataSourceConfig.PACKAGE, sqlSessionFactoryRef = "eventSqlSessionFactory")
+@MapperScan(basePackages = DataSourceConfig.PACKAGE, sqlSessionFactoryRef = "SqlSessionFactory")
 public class DataSourceConfig {
 
-	 // 精确到  目录，以便跟其他数据源隔离
-    static final String PACKAGE = "com.cloud.rent.event.dao";
-    static final String MAPPER_LOCATION = "classpath:event-mappers/*.xml";
+    // 精确到  目录，以便跟其他数据源隔离
+    static final String PACKAGE = "com.plan.dream.dao";
+    static final String MAPPER_LOCATION = "classpath:mappers/*.xml";
 
 
-    @Bean(name = "eventDataSource")
-    @ConfigurationProperties(prefix = "yx.spring.datasource")
+    @Bean(name = "DataSource")
+    @ConfigurationProperties(prefix = "spring.datasource")
     public DataSource eventDataSource() {
         return DataSourceBuilder.create().build();
     }
@@ -45,9 +45,9 @@ public class DataSourceConfig {
     }
 
     @Bean(name = "eventSqlSessionFactory")
-    public SqlSessionFactory eventSqlSessionFactory(@Qualifier("eventDataSource") DataSource eventDataSource) throws Exception {
+    public SqlSessionFactory eventSqlSessionFactory(@Qualifier("DataSource") DataSource dataSource) throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-        sessionFactory.setDataSource(eventDataSource);
+        sessionFactory.setDataSource(dataSource);
         //防止mybatis返回类型为map时，过滤掉null值得问题,开始
         org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
         configuration.setCallSettersOnNulls(true);

@@ -4,7 +4,7 @@ import lombok.Data;
 
 /**
  * @ProjectName: dream
- * @Package: com.plan.dream.pattern.builder.service.entity
+ * @Package: com.plan.dream.pattern.builder.service.com.plan.dream.entity
  * @ClassName: Computer
  * @author: Rocky Qian
  * @description: 产品

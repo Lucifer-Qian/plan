@@ -1,6 +1,5 @@
 package com.plan.dream.service.impl;
 
-import com.plan.dream.dao.LoginDao;
 import com.plan.dream.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,12 +13,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class LoginServiceImpl implements LoginService {
 
-    @Autowired
-    private LoginDao loginDao;
 
     @Override
     public void insert(){
-        loginDao.insert();
+        return;
     }
 
 }
