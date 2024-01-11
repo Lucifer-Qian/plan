@@ -3,7 +3,6 @@ package com.plan.dream.controller;
 import com.plan.dream.common.PageResponse;
 import com.plan.dream.entity.Player;
 import com.plan.dream.service.PlayerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
