@@ -11,7 +11,7 @@ package com.plan.dream.pattern.chain.demo1;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         HandlerA a = new HandlerA();
         HandlerB b = new HandlerB();
         HandlerC c = new HandlerC();
@@ -22,5 +22,5 @@ public class Client {
         c.setSuccessor(c);
         RequestData requestData = new RequestData("请求数据ABCD");
         a.handle(requestData);
-    }
+    }*/
 }

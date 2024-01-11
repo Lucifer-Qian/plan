@@ -11,7 +11,7 @@ package com.plan.dream.pattern.state.demo2;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
 
         TrafficLight trafficLight = new TrafficLight();
 
@@ -19,5 +19,5 @@ public class Client {
         trafficLight.switchGreen();
         trafficLight.switchYellow();
 
-    }
+    }*/
 }

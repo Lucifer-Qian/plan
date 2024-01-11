@@ -11,7 +11,7 @@ package com.plan.dream.pattern.flyweight.demo1;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         //先获取工厂对象
         final FlyweightFactory flyweightFactory = new FlyweightFactory();
         //通过工厂对象获取共享的享元对象
@@ -24,5 +24,5 @@ public class Client {
         final UnSharedFlyweight u1 = new UnSharedFlyweight("A");
         final UnSharedFlyweight u2 = new UnSharedFlyweight("A");
         System.out.println(u1 == u2);
-    }
+    }*/
 }

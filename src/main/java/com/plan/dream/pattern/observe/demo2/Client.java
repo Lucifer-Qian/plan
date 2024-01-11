@@ -13,12 +13,12 @@ import java.util.UUID;
  */
 public class Client {
 
-    public static void main(String[] args) throws InterruptedException {
+/*    public static void main(String[] args) throws InterruptedException {
         final LotteryServiceImpl lotteryService = new LotteryServiceImpl();
 
         while (true){
             lotteryService.lotteryAndMessage(UUID.randomUUID().toString());
             Thread.sleep(5000);
         }
-    }
+    }*/
 }

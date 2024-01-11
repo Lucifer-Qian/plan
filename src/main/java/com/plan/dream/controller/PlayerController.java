@@ -1,13 +1,12 @@
 package com.plan.dream.controller;
 
+import com.plan.dream.common.PageResponse;
 import com.plan.dream.entity.Player;
 import com.plan.dream.service.PlayerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @ProjectName: plan
@@ -19,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @version: 1.0
  */
 
-@RequestMapping("/nba")
+@RequestMapping("/player")
 @RestController
 public class PlayerController {
 
@@ -39,7 +38,7 @@ public class PlayerController {
      * @date 2024/1/10 17:22
      */
     @GetMapping("/select")
-    public Page<Player> playerInfo(Player player, PageRequest pageRequest) {
-        return playerService.queryByPage(player, pageRequest);
+    public PageResponse<Player> playerInfo(@RequestBody Player player, @RequestParam("pageIndex") Integer pageIndex, @RequestParam("pageRow") Integer pageRow) {
+        return playerService.queryByPage(player, pageIndex, pageRow);
     }
 }

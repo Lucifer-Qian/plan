@@ -12,7 +12,7 @@ import java.io.*;
  * @version: 1.0
  */
 public class Test1ConcretePrototype {
-    public static void main(String[] args) throws Exception {
+/*    public static void main(String[] args) throws Exception {
         ConcretePrototype c1 = new ConcretePrototype();
         Student s1 = new Student(1, "小明");
         c1.setStudent(s1);
@@ -33,5 +33,5 @@ public class Test1ConcretePrototype {
         c1.getStudentInfo();
         c2.getStudentInfo();
         System.out.println(s1 == s2);
-    }
+    }*/
 }

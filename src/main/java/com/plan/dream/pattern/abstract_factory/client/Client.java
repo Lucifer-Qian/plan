@@ -40,11 +40,11 @@ public class Client {
         this.noteBook = noteBook;
     }
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Client client = new Client(new AppleElectronicsFactory());
         final AbstractPhone phone = client.getPhone();
         final AbstractNoteBook noteBook = client.getNoteBook();
         System.out.println(phone);
         System.out.println(noteBook);
-    }
+    }*/
 }

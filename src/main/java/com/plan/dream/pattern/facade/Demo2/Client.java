@@ -10,7 +10,7 @@ package com.plan.dream.pattern.facade.Demo2;
  * @version: 1.0
  */
 public class Client {
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
 
         final SmartAppliancesFacade smartAppliancesFacade = new SmartAppliancesFacade();
 
@@ -18,5 +18,5 @@ public class Client {
 
         smartAppliancesFacade.say("关闭家电");
 
-    }
+    }*/
 }

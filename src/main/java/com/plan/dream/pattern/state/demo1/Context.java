@@ -1,8 +1,6 @@
 package com.plan.dream.pattern.state.demo1;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 /**
  * @ProjectName: dream
@@ -17,28 +15,28 @@ import lombok.NoArgsConstructor;
 @Data
 public class Context {
 
-    private State currentState;
+    private DemoState currentDemoState;
 
     public Context(){
-        this.currentState = null;
+        this.currentDemoState = null;
     }
 
-    public Context(State currentState){
-        this.currentState = currentState;
+    public Context(DemoState currentDemoState){
+        this.currentDemoState = currentDemoState;
     }
 
-    public State getCurrentState() {
-        return currentState;
+    public DemoState getCurrentDemoState() {
+        return currentDemoState;
     }
 
-    public void setCurrentState(State currentState) {
-        this.currentState = currentState;
+    public void setCurrentDemoState(DemoState currentDemoState) {
+        this.currentDemoState = currentDemoState;
     }
 
     @Override
     public String toString() {
         return "Context{" +
-                "currentState=" + currentState +
+                "currentState=" + currentDemoState +
                 '}';
     }
 }

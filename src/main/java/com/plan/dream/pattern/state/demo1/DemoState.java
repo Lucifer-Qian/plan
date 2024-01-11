@@ -9,7 +9,7 @@ package com.plan.dream.pattern.state.demo1;
  * @date: 2023/11/29 17:00
  * @version: 1.0
  */
-public interface State {
+public interface DemoState {
 
     void handle(Context context);
 }

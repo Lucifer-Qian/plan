@@ -1,9 +1,8 @@
 package com.plan.dream.service;
 
 
+import com.plan.dream.common.PageResponse;
 import com.plan.dream.entity.Player;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 
 /**
  * (Player)表服务接口
@@ -12,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
  * @since 2024-01-10 17:43:28
  */
 public interface PlayerService {
+
 
     /**
      * 通过ID查询单条数据
@@ -25,10 +25,11 @@ public interface PlayerService {
      * 分页查询
      *
      * @param player 筛选条件
-     * @param pageRequest      分页对象
+     * @param pageIndex     页码
+     * @param pageSize      展示条目数
      * @return 查询结果
      */
-    Page<Player> queryByPage(Player player, PageRequest pageRequest);
+    PageResponse<Player> queryByPage(Player player, Integer pageIndex, Integer pageSize);
 
     /**
      * 新增数据
@@ -53,5 +54,4 @@ public interface PlayerService {
      * @return 是否成功
      */
     boolean deleteById(Integer id);
-
 }

@@ -10,7 +10,7 @@ package com.plan.dream.pattern.observe.demo1;
  * @version: 1.0
  */
 public class Client {
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         final Subject subject = new ConcreteSubject();
         final ConcreteObserver1 concreteObserver1 = new ConcreteObserver1();
         final ConcreteObserver2 concreteObserver2 = new ConcreteObserver2();
@@ -21,5 +21,5 @@ public class Client {
 
         subject.detach(concreteObserver1);
         subject.observerNotify();
-    }
+    }*/
 }

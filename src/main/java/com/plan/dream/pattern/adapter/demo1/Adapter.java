@@ -9,7 +9,7 @@ package com.plan.dream.pattern.adapter.demo1;
  * @date: 2023/11/2 11:04
  * @version: 1.0
  */
-public class Adapter extends Adaptee implements Target {
+public class Adapter extends Adaptee implements DemoTarget {
 
 
     /**

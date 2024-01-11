@@ -14,7 +14,7 @@ import com.plan.dream.pattern.adapter.demo3.computer.Computer;
  */
 public class Client {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         System.out.println(new Computer().read(new SdAdapterTf()));
-    }
+    }*/
 }

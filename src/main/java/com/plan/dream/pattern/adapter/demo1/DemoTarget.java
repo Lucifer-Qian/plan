@@ -9,7 +9,7 @@ package com.plan.dream.pattern.adapter.demo1;
  * @date: 2023/11/2 11:01
  * @version: 1.0
  */
-public interface Target {
+public interface DemoTarget {
 
     /**
      * 目标抽象类-请求接口

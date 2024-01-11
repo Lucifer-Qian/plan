@@ -15,7 +15,7 @@ import java.util.List;
  * @version: 1.0
  */
 public class Client {
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
 
         List<Receipt> reciptList = ReceiptBuilder.getReciptList();
         System.out.println("================================");
@@ -42,5 +42,5 @@ public class Client {
                 System.out.println("================================");
             }
         }
-    }
+    }*/
 }

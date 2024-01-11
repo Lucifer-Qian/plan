@@ -20,7 +20,7 @@ public class Client {
 
   private final static Logger logger =  LoggerFactory.getLogger(Client.class);
 
-    public static void main(String[] args) throws ParseException {
+/*    public static void main(String[] args) throws ParseException {
 
         AuthLink authLink = new Level3AuthLink("1000013", "李工")
                 .appendNext(new Level2AuthLink("1000012", "王经理")
@@ -40,5 +40,5 @@ public class Client {
         AuthService.auth("1000011","10032321312412");
         logger.info("测试结果：{}", "模拟三级负责人审批，罗总");
         logger.info("测试结果：{}", JSON.toJSONString(authLink.doAuth("1000011", "10032321312412", current)));
-    }
+    }*/
 }

@@ -28,7 +28,7 @@ public class AwardPrizesSimpleFactory {
      * @version 1.0
      * @date 2023/10/26 15:29
      */
-    public static PrizeService awardPrizes(int type){
+/*    public static PrizeService awardPrizes(int type){
         PrizeService result = null;
         if (type ==1){
              result = new JdCardImpl();
@@ -36,5 +36,5 @@ public class AwardPrizesSimpleFactory {
              result = new WeChatImpl();
         }
         return result;
-    }
+    }*/
 }

@@ -11,8 +11,8 @@ package com.plan.dream.pattern.facade.Demo1;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         final Facade facade = new Facade();
         facade.method();
-    }
+    }*/
 }

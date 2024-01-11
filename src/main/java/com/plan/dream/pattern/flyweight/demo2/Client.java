@@ -11,7 +11,7 @@ package com.plan.dream.pattern.flyweight.demo2;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
 
         final GobangFlyweight w = GobangFactory.getInstance().getGobang("w");
         final GobangFlyweight b = GobangFactory.getInstance().getGobang("b");
@@ -20,5 +20,5 @@ public class Client {
 
         System.out.println(b == b1);
 
-    }
+    }*/
 }

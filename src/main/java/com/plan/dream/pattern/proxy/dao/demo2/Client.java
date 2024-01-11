@@ -14,7 +14,7 @@ import com.plan.dream.pattern.proxy.dao.demo1.impl.MemberDaoImpl;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         //获取真是类
         final MemberDaoImpl memberDaoImpl = new MemberDaoImpl();
         //使用代理类工厂、创建代理类
@@ -28,7 +28,7 @@ public class Client {
 
         }
 
-    }
+    }*/
 }
 
 

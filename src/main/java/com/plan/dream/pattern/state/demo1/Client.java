@@ -11,14 +11,14 @@ package com.plan.dream.pattern.state.demo1;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Context context = new Context();
         ConcreteState1 state1 = new ConcreteState1();
         ConcreteState2 state2 = new ConcreteState2();
         state1.handle(context);
-        System.out.println(context.getCurrentState());
+        System.out.println(context.getCurrentDemoState());
         System.out.println("=================================");
         state2.handle(context);
-        System.out.println(context.getCurrentState());
-    }
+        System.out.println(context.getCurrentDemoState());
+    }*/
 }

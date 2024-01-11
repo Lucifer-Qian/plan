@@ -15,9 +15,9 @@ import java.math.BigDecimal;
  * @version: 1.0
  */
 public class Client {
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
 
         WxPay wxPay = new WxPay(new PayFingerPrintMode());
         wxPay.transfer("11", "11", new BigDecimal(11));
-    }
+    }*/
 }

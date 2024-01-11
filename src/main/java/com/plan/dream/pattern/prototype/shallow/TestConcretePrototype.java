@@ -11,12 +11,12 @@ package com.plan.dream.pattern.prototype.shallow;
  */
 public class TestConcretePrototype {
 
-    public static void main(String[] args) throws CloneNotSupportedException {
+/*    public static void main(String[] args) throws CloneNotSupportedException {
         //创建一个新对象
         final ConcretePrototype c1 = new ConcretePrototype();
         //新对象clone出另外一个对象
         final ConcretePrototype c2 = c1.clone();
         //查看两个对象的地址值是否一致
         System.out.println(c1 == c2);
-    }
+    }*/
 }

@@ -14,7 +14,7 @@ import com.plan.dream.pattern.proxy.dao.demo1.proxy.MemberDaoProxy;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         //目标对象
         final MemberDaoImpl memberDao = new MemberDaoImpl();
 
@@ -22,5 +22,5 @@ public class Client {
         final MemberDaoProxy memberDaoProxy = new MemberDaoProxy(memberDao);
         //执行代理方法
         memberDaoProxy.insert();
-    }
+    }*/
 }

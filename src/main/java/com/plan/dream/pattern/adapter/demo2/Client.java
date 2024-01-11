@@ -14,10 +14,10 @@ package com.plan.dream.pattern.adapter.demo2;
 public class Client {
 
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         //调用适配器
         Target target = new Adapter(new Adaptee());
         //执行适配器方法
         target.request();
-    }
+    }*/
 }

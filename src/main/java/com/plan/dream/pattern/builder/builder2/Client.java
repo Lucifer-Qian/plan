@@ -13,11 +13,11 @@ import java.util.Date;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         final TodoWorkBuilder build = new TodoWorkBuilder.Builder().setId(1L).setType(1).
                 setEventId(2L).setPlazaId(1231).setStoreId(321).
                 setBindType(1).setRoleType(32).setUserId(23L).
                 setCreateTime(new Date()).setContent("321312312").build();
         build.send();
-    }
+    }*/
 }

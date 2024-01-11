@@ -12,7 +12,7 @@ package com.plan.dream.pattern.prototype.deep;
  */
 public class TestConcretePrototype {
 
-    public static void main(String[] args) throws CloneNotSupportedException {
+/*    public static void main(String[] args) throws CloneNotSupportedException {
         //new 一个原型类
         ConcretePrototype c1 = new ConcretePrototype();
         //new 一个引用类
@@ -31,6 +31,6 @@ public class TestConcretePrototype {
         c2.getStudentInfo();
         //比较两个类中引用成员变量
         System.out.println(s1 == s2);
-    }
+    }*/
 
 }

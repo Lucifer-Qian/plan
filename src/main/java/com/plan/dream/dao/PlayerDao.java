@@ -4,6 +4,8 @@ package com.plan.dream.dao;
 import com.plan.dream.entity.Player;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
 /**
@@ -12,6 +14,7 @@ import java.util.List;
  * @author makejava
  * @since 2024-01-10 17:43:26
  */
+@Repository
 public interface PlayerDao {
 
     /**
@@ -26,10 +29,9 @@ public interface PlayerDao {
      * 查询指定行数据
      *
      * @param player 查询条件
-     * @param pageable         分页对象
      * @return 对象列表
      */
-    List<Player> queryAllByLimit(Player player, @Param("pageable") Pageable pageable);
+    List<Player> queryAllByLimit(Player player);
 
     /**
      * 统计总行数

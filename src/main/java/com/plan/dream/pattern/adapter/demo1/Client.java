@@ -13,10 +13,10 @@ package com.plan.dream.pattern.adapter.demo1;
 public class Client {
 
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         //调用适配器
-        Target target = new Adapter();
+        DemoTarget target = new Adapter();
         //执行适配器方法
         target.request();
-    }
+    }*/
 }

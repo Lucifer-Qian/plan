@@ -10,8 +10,8 @@ package com.plan.dream.pattern.decorator.demo1;
  * @version: 1.0
  */
 public class Client {
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         final ConcreteDecorator concreteComponent = new ConcreteDecorator(new ConcreteComponent());
         concreteComponent.operation();
-    }
+    }*/
 }

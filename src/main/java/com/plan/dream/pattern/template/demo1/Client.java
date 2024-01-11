@@ -11,11 +11,11 @@ package com.plan.dream.pattern.template.demo1;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         ConcreteTemplate1 concreteTemplate1 = new ConcreteTemplate1();
         ConcreteTemplate2 concreteTemplate2 = new ConcreteTemplate2();
         concreteTemplate1.step1("x");
         System.out.println("==============");
         concreteTemplate2.step1("2");
-    }
+    }*/
 }

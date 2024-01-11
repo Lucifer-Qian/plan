@@ -16,7 +16,7 @@ import java.util.List;
  * @version: 1.0
  */
 public class Client {
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         List<Receipt> reciptList = ReceiptBuilder.getReciptList();
         ReceiptStrategyContext receiptStrategyContext = new ReceiptStrategyContext();
         //初始化策略工厂
@@ -29,5 +29,5 @@ public class Client {
             //执行策略
             receiptStrategyContext.handle(receipt);
         }
-    }
+    }*/
 }

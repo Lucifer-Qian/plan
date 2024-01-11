@@ -16,7 +16,7 @@ import java.util.UUID;
  */
 public class Test {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
 
         I iObj = new A();
         Statement stmt = null;
@@ -45,5 +45,5 @@ public class Test {
         }
 
         System.out.println(UUID.randomUUID().toString());
-    }
+    }*/
 }

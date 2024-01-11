@@ -14,7 +14,7 @@ import com.plan.dream.pattern.builder.service.impl.AppleBuilder;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
 
         //创建一个指挥者，传参要具体的构造者
         final Director director = new Director(new AppleBuilder());
@@ -22,6 +22,6 @@ public class Client {
         //获取电脑
         System.out.println(director.construct());
 
-    }
+    }*/
 
 }

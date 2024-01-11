@@ -11,7 +11,7 @@ package com.plan.dream.pattern.template.demo2;
  */
 public class Client {
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         Account accountOneMonth = new AccountOneMonth();
         Account accountSevenDays = new AccountSevenDays();
 
@@ -20,5 +20,5 @@ public class Client {
         accountSevenDays.handler("tony","123456");
         System.out.println("================");
         accountSevenDays.handler("tom","123456");
-    }
+    }*/
 }

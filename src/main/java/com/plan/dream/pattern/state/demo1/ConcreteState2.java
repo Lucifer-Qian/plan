@@ -9,11 +9,11 @@ package com.plan.dream.pattern.state.demo1;
  * @date: 2023/11/29 17:03
  * @version: 1.0
  */
-public class ConcreteState2 implements State{
+public class ConcreteState2 implements DemoState {
     @Override
     public void handle(Context context) {
         System.out.println("进入到状态模式2...........");
-        context.setCurrentState(this);
+        context.setCurrentDemoState(this);
     }
 
     @Override

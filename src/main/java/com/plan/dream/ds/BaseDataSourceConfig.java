@@ -1,6 +1,5 @@
 package com.plan.dream.ds;
 
-
 import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -19,41 +18,46 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
 /**
- * 事件驱动数据源配置
- *
- * @author qmc
+ * @ProjectName: synchronous
+ * @Package: com.by.synchronous.config.ds
+ * @ClassName: New
+ * @author: Rocky Qian
+ * @description:
+ * @date: 2021/10/27 14:17
+ * @version: 1.0
  */
 @Configuration
-//扫描 Mapper 接口并容器管理
-@MapperScan(basePackages = DataSourceConfig.PACKAGE, sqlSessionFactoryRef = "SqlSessionFactory")
-public class DataSourceConfig {
+@MapperScan(basePackages = BaseDataSourceConfig.PACKAGE, sqlSessionFactoryRef = "baseSqlSessionFactory")
+public class BaseDataSourceConfig {
 
-    // 精确到  目录，以便跟其他数据源隔离
+    /**
+     * 精确到  目录，以便跟其他数据源隔离
+     */
     static final String PACKAGE = "com.plan.dream.dao";
     static final String MAPPER_LOCATION = "classpath:mappers/*.xml";
 
 
-    @Bean(name = "DataSource")
-    @ConfigurationProperties(prefix = "spring.datasource")
-    public DataSource eventDataSource() {
+    @Bean(name = "baseDataSource")
+    @ConfigurationProperties(prefix = "datasource.master")
+    public DataSource baseDataSource() {
         return DataSourceBuilder.create().build();
     }
 
-    @Bean(name = "transactionManagerEvent")
-    public DataSourceTransactionManager eventTransactionManager() {
-        return new DataSourceTransactionManager(eventDataSource());
+    @Bean(name = "transactionManagerBase")
+    public DataSourceTransactionManager baseTransactionManager() {
+        return new DataSourceTransactionManager(baseDataSource());
     }
 
-    @Bean(name = "eventSqlSessionFactory")
-    public SqlSessionFactory eventSqlSessionFactory(@Qualifier("DataSource") DataSource dataSource) throws Exception {
+    @Bean(name = "baseSqlSessionFactory")
+    public SqlSessionFactory baseSqlSessionFactory(@Qualifier("baseDataSource") DataSource baseDataSource) throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-        sessionFactory.setDataSource(dataSource);
+        sessionFactory.setDataSource(baseDataSource);
         //防止mybatis返回类型为map时，过滤掉null值得问题,开始
         org.apache.ibatis.session.Configuration configuration = new org.apache.ibatis.session.Configuration();
         configuration.setCallSettersOnNulls(true);
         sessionFactory.setConfiguration(configuration);
         //结束
-        sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(DataSourceConfig.MAPPER_LOCATION));
+        sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(BaseDataSourceConfig.MAPPER_LOCATION));
         return sessionFactory.getObject();
     }
 
@@ -62,8 +66,8 @@ public class DataSourceConfig {
     public ServletRegistrationBean druidServlet() {
         ServletRegistrationBean reg = new ServletRegistrationBean();
         reg.setServlet(new StatViewServlet());
-        reg.addUrlMappings("/druid/event/*");
-        reg.addInitParameter("loginUsername", "event");
+        reg.addUrlMappings("/druid/base/*");
+        reg.addInitParameter("loginUsername", "base");
         reg.addInitParameter("loginPassword", "123456");
         return reg;
     }
@@ -80,5 +84,4 @@ public class DataSourceConfig {
         filterRegistrationBean.addInitParameter("principalSessionName", "USER_SESSION");
         return filterRegistrationBean;
     }
-
 }

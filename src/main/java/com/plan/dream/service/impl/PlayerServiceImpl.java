@@ -1,15 +1,16 @@
 package com.plan.dream.service.impl;
 
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
+import com.plan.dream.common.PageResponse;
 import com.plan.dream.dao.PlayerDao;
 import com.plan.dream.entity.Player;
 import com.plan.dream.service.PlayerService;
 import org.springframework.stereotype.Service;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * (Player)表服务实现类
@@ -17,7 +18,7 @@ import javax.annotation.Resource;
  * @author makejava
  * @since 2024-01-10 17:43:29
  */
-@Service("playerService")
+@Service
 public class PlayerServiceImpl implements PlayerService {
     @Resource
     private PlayerDao playerDao;
@@ -37,13 +38,26 @@ public class PlayerServiceImpl implements PlayerService {
      * 分页查询
      *
      * @param player 筛选条件
-     * @param pageRequest      分页对象
+     * @param pageIndex     页码
+     * @param pageSize      展示条目数
      * @return 查询结果
      */
     @Override
-    public Page<Player> queryByPage(Player player, PageRequest pageRequest) {
-        long total = this.playerDao.count(player);
-        return new PageImpl<>(this.playerDao.queryAllByLimit(player, pageRequest), pageRequest, total);
+    public PageResponse<Player> queryByPage(Player player, Integer pageIndex, Integer pageSize) {
+        if (null == pageIndex || pageIndex <= 0) {
+            pageIndex = 1;
+        }
+        if (null == pageSize || pageSize <= 0) {
+            pageSize = 10;
+        }
+        Page<Integer> page = PageHelper.startPage(pageIndex, pageSize);
+        List<Player> result = this.playerDao.queryAllByLimit(player);
+        PageResponse<Player> pageResponse = new PageResponse<>();
+        pageResponse.setTotalSize(page != null ? (int) page.getTotal() : result.size());
+        pageResponse.setList(result);
+        pageResponse.setPageIndex(pageIndex);
+        pageResponse.setPageSize(pageSize);
+        return pageResponse;
     }
 
     /**

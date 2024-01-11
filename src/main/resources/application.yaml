@@ -1,0 +1,27 @@
+datasource:
+  master:
+    acquireIncrement: 2
+    acquireRetryAttempts: 5
+    acquireRetryDelay: 1000
+    breakAfterAcquireFailure: false
+    driverClassName: com.mysql.jdbc.Driver
+    idleConnectionTestPeriod: 100
+    initialPoolSize: 10
+    jdbcUrl: jdbc:mysql://39.101.1.172:3306/my?useUnicode=true&characterEncoding=utf8&autoReconnect=true&failOverReadOnly=false&useSSL=false
+    maxIdleTime: 1800000
+    maxPoolSize: 20
+    maxStatements: 0
+    minPoolSize: 4
+    password: 123456
+    preferredTestQuery: SELECT 1 FROM DUAL
+    testConnectionOnCheckin: true
+    testConnectionOnCheckout: false
+    username: root
+
+server:
+  port: 26890
+
+#当遇到同样名字的时候，是否允许覆盖注册
+spring:
+  main:
+    allow-bean-definition-overriding: true
