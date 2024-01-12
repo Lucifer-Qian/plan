@@ -18,8 +18,6 @@ datasource:
     testConnectionOnCheckout: false
     username: root
 
-server:
-  port: 26890
 
 #当遇到同样名字的时候，是否允许覆盖注册
 spring:
